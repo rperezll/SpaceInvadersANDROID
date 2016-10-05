@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class VentanaJuego extends AppCompatActivity {
     private ImageView nave;
@@ -18,10 +19,14 @@ public class VentanaJuego extends AppCompatActivity {
     }
 
     public void desder(View view){
-        nave.setX(nave.getX()+100);
+        if(nave.getX()<865)
+            nave.setX(nave.getX()+100);
     }
+
     public void desizq (View view){
-        nave.setX(nave.getX()-100);
+        if(nave.getX()>65)
+            nave.setX(nave.getX()-100);
+
     }
 
     class Disparo extends Thread{
@@ -33,10 +38,9 @@ public class VentanaJuego extends AppCompatActivity {
             while (parar) {
                 bala=(ImageView)findViewById(R.id.bala);
                 try {
-                    Thread.sleep(vel * 10);
-                    if (bala.getY()>-51)
-                        bala.setY(bala.getY()-40);
-                    else {
+                    if (bala.getY()>-51) {
+                        bala.setY(bala.getY() - 40);
+                    }else {
                         bala.setX(nave.getX());
                         bala.setY(nave.getY());
                     }
@@ -49,6 +53,7 @@ public class VentanaJuego extends AppCompatActivity {
             System.out.println("¡Se paró el hilo!");
         }
     }
+
 }
 
 
