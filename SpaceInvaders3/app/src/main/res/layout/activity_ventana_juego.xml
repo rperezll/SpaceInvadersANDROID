@@ -9,21 +9,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.winrob.spaceinvaders3.VentanaJuego"
-    android:background="@drawable/espacio">
+    tools:context="com.example.winrob.spaceinvaders3.Activity_ventana_juego"
+    android:background="@drawable/earth">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="189dp"
         android:layout_alignParentTop="true"
         android:id="@+id/izq"
         android:visibility="visible"
         android:onClick="desizq"
-        android:background="@android:color/transparent" />
+        android:background="@android:color/transparent"
+        android:layout_alignEnd="@+id/bala"
+        android:layout_marginEnd="29dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -50,22 +50,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/naveico"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="96dp"
-        android:id="@+id/naveico" />
-
-    <TextView
-        android:text="V1 01/10/2016"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:id="@+id/textView"
-        android:textStyle="normal|bold"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/naveico"
         android:layout_centerHorizontal="true"
-        android:textSize="24sp" />
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
