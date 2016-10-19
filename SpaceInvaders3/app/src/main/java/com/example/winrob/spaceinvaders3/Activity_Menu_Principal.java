@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 
 public class Activity_Menu_Principal extends AppCompatActivity {
@@ -28,6 +29,7 @@ public class Activity_Menu_Principal extends AppCompatActivity {
     public void presjugar(View v) { //Arrancar el activity del juego
         Intent jugar2 = new Intent(Activity_Menu_Principal.this, Activity_ventana_juego.class);
         startActivity(jugar2);
+        finish();
     }
 
     public void pressalir(View v){  //Salir de la aplicación
@@ -35,7 +37,7 @@ public class Activity_Menu_Principal extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy (){    // Para que pare la musica cuando salimos de la app
+    protected void onDestroy (){    // Para que pare la musica cuando salimos del activity
         super.onDestroy();
         if (reproductor.isPlaying())
         {
@@ -44,17 +46,7 @@ public class Activity_Menu_Principal extends AppCompatActivity {
         }
     }
 
-    @Override                       // Si dejamos la app en segundo plano, que no suene
-    protected void onPause (){
-        super.onPause();
-        reproductor.pause();
-    }
-    //   Volvemos a la app
-    @Override
-    protected void onResume (){
-        super.onResume();
-        reproductor.start();
-    }
+
 
 }
 

@@ -12,47 +12,45 @@
     tools:context="com.example.winrob.spaceinvaders3.Activity_ventana_juego"
     android:background="@drawable/earth">
 
-    <Button
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/naveico"
+        android:layout_marginBottom="82dp"
+        android:id="@+id/naveico"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:id="@+id/izq"
-        android:visibility="visible"
-        android:onClick="desizq"
-        android:background="@android:color/transparent"
-        android:layout_alignEnd="@+id/bala"
-        android:layout_marginEnd="29dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/der"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="183dp"
-        android:layout_alignParentTop="true"
-        android:visibility="visible"
-        android:onClick="desder"
-        android:background="@android:color/transparent" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/disparo"
         android:id="@+id/bala"
-        android:layout_alignBottom="@+id/naveico"
+        android:layout_alignTop="@+id/naveico"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/naveico"
-        android:layout_marginBottom="96dp"
-        android:id="@+id/naveico"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true" />
+        android:id="@+id/izq"
+        android:visibility="visible"
+        android:onClick="desizq"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/bala" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/der"
+        android:visibility="visible"
+        android:onClick="desder"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/bala" />
 
 </RelativeLayout>
