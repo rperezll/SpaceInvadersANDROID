@@ -19,7 +19,7 @@
         android:id="@+id/button_Salir"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:onClick="pressalir"
-        android:layout_below="@+id/button_Controles"
+        android:layout_below="@+id/button_ayuda"
         android:layout_alignStart="@+id/button_Jugar"
         android:layout_marginTop="19dp" />
 
@@ -37,14 +37,15 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="controles"
+        android:text="ayuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_Controles"
+        android:id="@+id/button_ayuda"
         android:background="@android:drawable/button_onoff_indicator_off"
         android:layout_below="@+id/button_Jugar"
         android:layout_alignStart="@+id/button_Salir"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:onClick="presayuda" />
 
     <TextView
         android:text="© Softworld Games"

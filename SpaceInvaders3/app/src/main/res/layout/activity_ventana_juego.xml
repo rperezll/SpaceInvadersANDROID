@@ -29,28 +29,4 @@
         android:layout_alignTop="@+id/naveico"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/izq"
-        android:visibility="visible"
-        android:onClick="desizq"
-        android:background="@android:color/transparent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/bala" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/der"
-        android:visibility="visible"
-        android:onClick="desder"
-        android:background="@android:color/transparent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/bala" />
-
 </RelativeLayout>
