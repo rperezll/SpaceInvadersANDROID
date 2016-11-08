@@ -25,11 +25,16 @@ import android.widget.Toast;
 
 public class Activity_ventana_juego extends AppCompatActivity implements View.OnTouchListener{
     private int aux,aux2;
-    private ImageView nave, objeto;
+    private ImageView nave, enemigo;
     private Disparo d;
     private long backPressedTime = 0;
     private MediaPlayer reproductor2;
     RelativeLayout layoutJuego;
+    private DisparoEnemigo d2;
+    private int puntuacion;
+
+
+
     //Comentario de prueba.
 
 
@@ -48,6 +53,10 @@ public class Activity_ventana_juego extends AppCompatActivity implements View.On
         nave=(ImageView)findViewById(R.id.naveico);
         nave.setOnTouchListener(this);
         layoutJuego=(RelativeLayout) findViewById(R.id.activity_ventana_juego);
+        enemigo =(ImageView)findViewById(R.id.enemigo);
+        d2 = new DisparoEnemigo();
+        d2.start();
+
 
     }
 
@@ -87,6 +96,51 @@ public class Activity_ventana_juego extends AppCompatActivity implements View.On
             Intent jugar2 = new Intent(Activity_ventana_juego.this, Activity_Menu_Principal.class);
             startActivity(jugar2);
             finish(); //Para parar la ejecución del activity!
+        }
+    }
+
+    class DisparoEnemigo extends Thread{
+        boolean parar2=true;
+        int vel=1;
+        ImageView bala;
+        int desplazamiento=40;
+        int findePantall=-40;
+        boolean derecha=true,izquierda=false;
+        @Override
+        public void run() {
+
+            //objeto=(ImageView)findViewById(R.id.objeto);
+            bala=(ImageView)findViewById(R.id.bala);
+
+            while (parar2) {
+
+                try {
+                    if (derecha) {
+                        if (enemigo.getX() >= 780){
+                            derecha=false;
+                            izquierda=true;
+                        }else {
+                            enemigo.setX(enemigo.getX() + 20); //MEJORAR!
+                            //else nave.setX(View.FOCUS_LEFT)
+                        }
+                    }else if(izquierda){
+                        if (nave.getX() >= 118){
+                            derecha=true;
+                            izquierda=false;
+                            enemigo.setX(View.FOCUS_RIGHT);
+                        }else{
+                            enemigo.setX(enemigo.getX() - 90);
+                        }
+
+                    }
+                    Thread.sleep(vel * 30); //cuanto menor numero, mas velocidad.
+                    //bala=(ImageView)findViewById(R.id.bala);
+
+                } catch (InterruptedException ex) {
+                    System.err.println("Error en Disparo: Thread. Error en el movimiento del disparo");
+                }
+            }
+            System.out.println("¡Se paró el hilo!");
         }
     }
 
@@ -158,7 +212,6 @@ public class Activity_ventana_juego extends AppCompatActivity implements View.On
             System.out.println("¡Se paró el hilo!");
         }
     }
-
 }
 
 
