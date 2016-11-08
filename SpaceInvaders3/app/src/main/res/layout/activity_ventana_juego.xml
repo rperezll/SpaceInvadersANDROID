@@ -28,6 +28,14 @@
         android:id="@+id/bala"
         android:layout_alignTop="@+id/naveico"
         android:layout_centerHorizontal="true" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/balaenemigo2"
+        android:id="@+id/balaEnemigo"
+        android:layout_marginStart="14dp"
+        android:layout_alignTop="@+id/enemigo"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="PUNTUACIÓN:                      "
@@ -47,5 +55,6 @@
         android:id="@+id/enemigo"
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/naveico" />
+
 
 </RelativeLayout>

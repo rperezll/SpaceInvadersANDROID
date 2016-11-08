@@ -20,6 +20,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -31,7 +32,7 @@ public class Activity_ventana_juego extends AppCompatActivity implements View.On
     private MediaPlayer reproductor2;
     RelativeLayout layoutJuego;
     private DisparoEnemigo d2;
-    private int puntuacion;
+    private Disparodelenemigo d3;
 
 
 
@@ -56,6 +57,9 @@ public class Activity_ventana_juego extends AppCompatActivity implements View.On
         enemigo =(ImageView)findViewById(R.id.enemigo);
         d2 = new DisparoEnemigo();
         d2.start();
+
+        d3 = new Disparodelenemigo();
+        d3.start();
 
 
     }
@@ -212,6 +216,43 @@ public class Activity_ventana_juego extends AppCompatActivity implements View.On
             System.out.println("¡Se paró el hilo!");
         }
     }
+
+    class Disparodelenemigo extends Thread{
+        boolean parar3=true;
+        int vel=1;
+        ImageView balaE;
+        int desplazamiento=10;
+        int findePantalla=40;
+        int inicioPantalla = 1500;
+        @Override
+        public void run() {
+
+            //objeto=(ImageView)findViewById(R.id.objeto);
+            balaE=(ImageView)findViewById(R.id.balaEnemigo);
+
+            while (parar3) {
+
+                try {
+                    if ((balaE.getY()> findePantalla) && (balaE.getY()< inicioPantalla)) { //MEJORAR
+                        balaE.setY(balaE.getY() + desplazamiento);
+                    }else {
+                        balaE.setX(enemigo.getX());//+(enemigo.getWidth()/2)-(balaE.getWidth()/2)); //MEJORAR!
+                        balaE.setY(enemigo.getY());
+                    }
+
+                    Thread.sleep(vel * 8);
+                    balaE=(ImageView)findViewById(R.id.balaEnemigo);
+
+                } catch (InterruptedException ex) {
+                    System.err.println("Error en Disparo: Thread. Error en el movimiento del disparo");
+                }
+            }
+            System.out.println("¡Se paró el hilo!");
+        }
+    }
+
+
+
 }
 
 
