@@ -28,33 +28,102 @@
         android:id="@+id/bala"
         android:layout_alignTop="@+id/naveico"
         android:layout_centerHorizontal="true" />
-    <ImageView
+
+    <!-- <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/balaenemigo2"
         android:id="@+id/balaEnemigo"
         android:layout_marginStart="14dp"
         android:layout_alignTop="@+id/enemigo"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="PUNTUACIÓN:                      "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/puntuacion"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@android:color/holo_orange_dark" />
+        android:layout_centerHorizontal="true" /> -->
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/marciano"
-        android:layout_marginEnd="25dp"
         android:layout_marginTop="86dp"
         android:id="@+id/enemigo"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginBottom="234dp"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/naveico"
         android:layout_toStartOf="@+id/naveico" />
 
+    <TextView
+        android:text="Tiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo2"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_alignBaseline="@+id/titulo"
+        android:layout_alignBottom="@+id/titulo"
+        android:layout_alignStart="@+id/naveico" />
+
+    <Chronometer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/chronometer2"
+        android:layout_below="@+id/titulo2"
+        android:layout_alignEnd="@+id/naveico" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/puntuacion"
+        android:background="@android:color/transparent"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:text="0"
+        android:layout_marginEnd="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/titulo2"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:text="Puntuación"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_above="@+id/puntuacion"
+        android:layout_alignEnd="@+id/puntuacion" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/enemigo2"
+        android:id="@+id/enemigo2"
+        android:layout_alignTop="@+id/enemigo"
+        android:layout_alignEnd="@+id/titulo"
+        android:layout_marginTop="109dp" />
+
+    <Button
+        android:text="PAUSA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/chronometer2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:id="@+id/botonPausa"
+        android:onClick="pulsarPausa" />
+
+    <TextView
+        android:text="NIVEL 1 COMPLETADO"
+        android:id="@+id/mensajeNivel"
+        android:textColor="@android:color/background_light"
+        android:textStyle="normal|bold|italic"
+        android:textSize="30sp"
+        android:typeface="normal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:layout_below="@+id/enemigo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

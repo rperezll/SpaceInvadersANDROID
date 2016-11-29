@@ -52,8 +52,7 @@ public class Activity_Menu_Principal extends AppCompatActivity {
     @Override
     protected void onDestroy (){    // Para que pare la musica cuando salimos del activity
         super.onDestroy();
-        if (reproductor.isPlaying())
-        {
+        if (reproductor.isPlaying()) {
             reproductor.stop();
             reproductor.release();
         }

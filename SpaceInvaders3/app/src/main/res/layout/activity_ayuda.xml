@@ -11,19 +11,10 @@
     tools:context="com.example.winrob.spaceinvaders3.Activity_ayuda"
     android:background="@drawable/solarsystem">
 
-    <TextView
-        android:text="Toca tu nave y deslízala de izquierda a derecha para moverte por la pantalla. Evita las inclemencias de los invasores y ¡trata de destruirlos! Cuantos más elimines mayor puntuación obtendrás."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="146dp"
-        android:id="@+id/texto"
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/video"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_dark"
-        android:lineSpacingExtra="10sp"
-        android:textAllCaps="false"
-        android:textStyle="normal|bold" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
