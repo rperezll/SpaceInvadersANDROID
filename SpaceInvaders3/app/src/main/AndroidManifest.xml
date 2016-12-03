@@ -15,10 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Activity_ventana_juego"></activity>
-
-        <activity android:name=".Activity_ayuda"></activity>
+        <activity android:name=".Activity_ventana_juego" />
+        <activity android:name=".Activity_ayuda" />
+        <activity android:name=".pantalla_ganador"></activity>
     </application>
 
 </manifest>

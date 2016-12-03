@@ -29,15 +29,15 @@
         android:layout_alignTop="@+id/naveico"
         android:layout_centerHorizontal="true" />
 
-    <!-- <ImageView
+     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/balaenemigo2"
         android:id="@+id/balaEnemigo"
         android:layout_marginStart="14dp"
-        android:layout_alignTop="@+id/enemigo"
-        android:layout_centerHorizontal="true" /> -->
-
+         android:layout_alignTop="@+id/enemigo"
+        android:layout_centerHorizontal="true" />
+    <!--android:layout_alignTop="@+id/enemigo"-->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,19 +111,5 @@
         android:layout_marginEnd="15dp"
         android:id="@+id/botonPausa"
         android:onClick="pulsarPausa" />
-
-    <TextView
-        android:text="NIVEL 1 COMPLETADO"
-        android:id="@+id/mensajeNivel"
-        android:textColor="@android:color/background_light"
-        android:textStyle="normal|bold|italic"
-        android:textSize="30sp"
-        android:typeface="normal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_below="@+id/enemigo2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 </RelativeLayout>

@@ -34,6 +34,7 @@ public class Activity_Menu_Principal extends AppCompatActivity {
     }
 
     public void presjugar(View v) { //Arrancar el activity del juego
+        reproductor.stop();
         Intent jugar2 = new Intent(Activity_Menu_Principal.this, Activity_ventana_juego.class);
         startActivity(jugar2);
         finish(); //Para parar la ejecución del activity!
